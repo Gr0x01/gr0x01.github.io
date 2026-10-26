@@ -1,0 +1,13 @@
+{
+  "applinks": {
+    "details": [
+      {
+        "appIDs": ["KE2CS7389A.com.rb.web.spike"],
+        "components": [{ "/": "/join/*" }]
+      }
+    ]
+  },
+  "appclips": {
+    "apps": ["KE2CS7389A.com.rb.web.spike.Clip"]
+  }
+}

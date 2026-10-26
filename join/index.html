@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Get the app</title>
+<style>
+  body { font: 18px -apple-system, system-ui, sans-serif; max-width: 28em; margin: 3em auto; padding: 0 1em; }
+  button { font: inherit; padding: .8em 1.2em; border-radius: .6em; border: 0; background: #222; color: #fff; }
+  #status { color: #666; }
+</style>
+</head>
+<body>
+<h1>You're invited</h1>
+<p>Spike test page. It shows nothing and sends nothing — the part after <code>#</code> never reaches this server.</p>
+<button id="copy">Copy invite, then get the app</button>
+<p id="status"></p>
+<script>
+  // Copy needs a tap (a user gesture); doing it here is what lets the app pick the invite up after install.
+  document.getElementById("copy").onclick = async () => {
+    const status = document.getElementById("status");
+    try {
+      await navigator.clipboard.writeText(location.href);
+      status.textContent = location.hash ? "Copied. Install the app, open it, tap Paste." : "Copied, but this link has no # part.";
+    } catch (e) {
+      status.textContent = "Copy failed: " + e;
+    }
+  };
+</script>
+</body>
+</html>
